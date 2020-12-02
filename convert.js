@@ -1,3 +1,5 @@
+//default value does not acknowledge blank input
+
 function convertTemp() {
     let degree = document.getElementById("tempature").value;
     let fahr = 0; 
