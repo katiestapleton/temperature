@@ -1,8 +1,7 @@
 function convertTemp() {
-    let degree = document.getElementById("convertTemp").value;
+    let degree = document.getElementById("tempature").value;
     let fahr = 0; 
     let celc = 0;
-
 
     // convert F to C
     if (degree >= 32) {
@@ -10,14 +9,19 @@ function convertTemp() {
         celc = (fahr * 32) / 1.8;
     }
     // convert C to F
-    else {
+    else if (degree < 32) {
         celc = degree;
         fahr = (celc * 1.8) + 32;
     }
-    
+    // default value 
+    else {
+       fahr = "?";
+       celc = "?";
+    }
+
     // insert output into HTML: C then F
-    document.getElementById("toCels").value = celc;
-    document.getElementById("toFahr").innerHTML = fahr;
+    document.getElementById("toCels").innerHTML = celc + " &deg; C";
+    document.getElementById("toFahr").innerHTML = fahr + " &deg; F";
 }
 
 
