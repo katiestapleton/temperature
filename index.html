@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- author: Katie Stapleton, 12/02/2020. No templates used!! -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,38 +17,59 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <div class="container">
       <div>
         <h1>Convert Temperature</h1>
-        <h2>Fahrenheit vs Celsius</h2>
       </div>
       <div>
         <p>
           Convert temperature from Fahrenheit to Celsius OR Celsius to
-          Fahrenheit. <br />
-          At 32 &deg; or higher, the program assumes you are referring to
           Fahrenheit.
         </p>
       </div>
+
+      <!-- user selects conversion F2C or C2F-->
+      <div>
+        <div>
+          <!--radio button: C2F-->
+          <label>
+            <input type="radio" name="unit" id="buttonC2F" checked />
+            Celsius to Fahrenheit
+          </label>
+        </div>
+        <div>
+          <!--radio button: F2C-->
+          <label>
+            <input type="radio" name="unit" id="buttonF2C" />
+            Fahrenheit to Celsius
+          </label>
+        </div>
+      </div>
+
+      <!-- user inputs temperature value-->
       <div>
         <span>Temperature: </span>
         <input
           type="text"
           placeholder="enter temperature"
-          name="tempatureCF"
+          name="result"
           id="tempature"
           onkeyup="convertTemp()"
         />
       </div>
+
+      <!--output: celsius. use span to keep inline-->
       <div>
-        <!--fix layput once output issue solved-->
-        <!--  <span> Celsius: &deg; </span>  -->
-        <p id="toCels">? &deg; C</p>
-        <!-- <span> Fahrenheit: &deg;</span> -->
-        <p id="toFahr">? &deg; F</p>
+        <span>Celsius: </span>
+        <span id="toCels">? &deg; C</span>
       </div>
-      <!--consider adding a reverse option in case user actually wanted it the opposite-->
+      <!--output: fahrenheit. use span to keep inline-->
+      <div>
+        <span>Fahrenheit: </span>
+        <span id="toFahr">? &deg; F</span>
+      </div>
     </div>
 
     <script src="convert.js"></script>

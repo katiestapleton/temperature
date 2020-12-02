@@ -1,30 +1,26 @@
-//default value does not acknowledge blank input
+// author: Katie Stapleton, 12/02/2020
 
 function convertTemp() {
     let degree = document.getElementById("tempature").value;
+    let buttonF2C = document.getElementById("buttonF2C").checked;
+    let buttonC2F = document.getElementById("buttonC2F").checked;
     let fahr = 0; 
-    let celc = 0;
+    let cels = 0;
+    
 
-    // convert F to C
-    if (degree >= 32) {
-        fahr = degree;
-        celc = (fahr * 32) / 1.8;
-    }
-    // convert C to F
-    else if (degree < 32) {
-        celc = degree;
-        fahr = (celc * 1.8) + 32;
-    }
-    // default value 
-    else {
-       fahr = "?";
-       celc = "?";
+        // convert F to C
+        if (buttonF2C) {
+            fahr = degree;
+            cels = (fahr - 32)* (5/9);
+        }
+        // convert C to F
+        else (buttonC2F) {
+            cels = degree;
+            fahr = (cels * 1.8) + 32;
+        }
     }
 
-    // insert output into HTML: C then F
-    document.getElementById("toCels").innerHTML = celc + " &deg; C";
+    // insert output: Celsius and Fahrenheit
+    document.getElementById("toCels").innerHTML = cels + " &deg; C";
     document.getElementById("toFahr").innerHTML = fahr + " &deg; F";
 }
-
-
-//if decide to add reverse option. use button. switch loop
