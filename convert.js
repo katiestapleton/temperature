@@ -7,14 +7,20 @@ function convertTemp() {
     let fahr = 0; 
     let cels = 0;
     
-
-        // convert F to C
+    //default values if temp input is blank or not a number
+    if(degree =="" || isNaN(degree)) {
+        fahr = "?";
+        cels = "?"
+    }
+    //calculates temp conversion
+    else {
+        // convert F to C. buttonF2C
         if (buttonF2C) {
             fahr = degree;
             cels = (fahr - 32)* (5/9);
         }
-        // convert C to F
-        else (buttonC2F) {
+        // convert C to F. buttonC2F
+        else {
             cels = degree;
             fahr = (cels * 1.8) + 32;
         }
